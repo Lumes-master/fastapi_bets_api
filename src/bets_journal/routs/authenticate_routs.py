@@ -3,7 +3,6 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 from bets_journal import tables
 from bets_journal.schemas.authenticate_schemas import Token, UserPost, UserDB
-from bets_journal.schemas.email_schemas import Email, send_email
 from bets_journal.services.auth_service import AuthService
 
 router = APIRouter()

@@ -1,13 +1,12 @@
+#libraries
 from typing import Optional
 from datetime import date
 from fastapi import Depends, HTTPException
 
-
+#inner
 from bets_journal import tables
 from bets_journal.database import get_db, Session
-
 from bets_journal.schemas.bet_schemas import  BetPost, Result
-
 from bets_journal.tables import Bet
 
 
@@ -35,8 +34,10 @@ class BetService:
             )
         return bet
 
+
     def get_bet_by_id(self, id:int, user_id: int):
         return self._get_bet_by_id(id=id, user_id=user_id)
+
 
     def create_bet(self, data:BetPost, user_id:int)->tables.Bet:
         data_dict = data.dict()
